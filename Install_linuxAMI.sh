@@ -40,7 +40,10 @@ find /var/www -type d -exec sudo chmod 2775 {} \;
 # Add group write permissions
 find /var/www -type f -exec sudo chmod 0664 {} \;
 
-# Start MariaDB
+# Autostart MySQL server
+chkconfig --level 3 mysqld on
+
+# Start MySQL
 service mysqld start
 
 #Set passwords for the MySQL root account
